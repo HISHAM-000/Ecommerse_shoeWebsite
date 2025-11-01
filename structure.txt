@@ -1,0 +1,85 @@
+src/
+ ├── app/
+ │    ├── core/                       # Core services, guards, interceptors (singleton)
+ │    │    ├── interceptors/
+ │    │    ├── guards/
+ │    │    ├── services/
+ │    │    ├── models/                # Global TypeScript interfaces/models
+ │    │    ├── core.module.ts
+ │    │    └── http-error.interceptor.ts
+ │    │
+ │    ├── shared/                     # Shared reusable components, pipes, directives
+ │    │    ├── components/
+ │    │    │    ├── button/
+ │    │    │    ├── modal/
+ │    │    │    └── loader/
+ │    │    ├── pipes/
+ │    │    ├── directives/
+ │    │    ├── utils/                 # Utility/helper functions
+ │    │    └── shared.module.ts
+ │    │
+ │    ├── features/                   # Domain-based feature modules
+ │    │    ├── auth/                  # Authentication & Authorization
+ │    │    │    ├── login/
+ │    │    │    ├── register/
+ │    │    │    ├── forgot-password/
+ │    │    │    └── auth.module.ts
+ │    │    │
+ │    │    ├── products/              # Product catalog
+ │    │    │    ├── list/
+ │    │    │    ├── detail/
+ │    │    │    └── products.module.ts
+ │    │    │
+ │    │    ├── cart/                  # Shopping cart
+ │    │    │    ├── cart-page/
+ │    │    │    └── cart.module.ts
+ │    │    │
+ │    │    ├── checkout/              # Checkout & Payment
+ │    │    │    ├── shipping/
+ │    │    │    ├── payment/
+ │    │    │    └── checkout.module.ts
+ │    │    │
+ │    │    ├── orders/                # Order history & tracking
+ │    │    │    ├── order-list/
+ │    │    │    ├── order-detail/
+ │    │    │    └── orders.module.ts
+ │    │    │
+ │    │    └── user/                  # User profile & settings
+ │    │         ├── profile/
+ │    │         ├── addresses/
+ │    │         └── user.module.ts
+ │    │
+ │    ├── store/                      # Global state management (NgRx, Akita, etc.)
+ │    │    ├── app.state.ts
+ │    │    ├── reducers/
+ │    │    ├── actions/
+ │    │    └── effects/
+ │    │
+ │    ├── layouts/                    # Global layouts
+ │    │    ├── main-layout/           # Navbar, footer, etc.
+ │    │    ├── auth-layout/
+ │    │    └── layout.module.ts
+ │    │
+ │    ├── pages/                      # Standalone pages (home, about, contact)
+ │    │    ├── home/
+ │    │    ├── about/
+ │    │    ├── contact/
+ │    │    └── pages.module.ts
+ │    │
+ │    ├── app-routing.module.ts       # Global routes
+ │    └── app.module.ts
+ │
+ ├── assets/                          # Static assets (images, icons, styles, translations)
+ │    ├── images/
+ │    ├── i18n/                       # Translations for multilingual support
+ │    └── styles/                     # Global SCSS/CSS
+ │         ├── variables.scss
+ │         ├── mixins.scss
+ │         └── themes/
+ │
+ ├── environments/                    # Environment configs
+ │    ├── environment.ts
+ │    └── environment.prod.ts
+ │
+ ├── index.html
+ └── main.ts

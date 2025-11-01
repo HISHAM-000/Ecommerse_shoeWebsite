@@ -1,0 +1,134 @@
+src/
+ ├── app/
+ │    ├── core/                                 # Core singleton services, guards, interceptors
+ │    │    ├── interceptors/
+ │    │    │    └── http-error.interceptor.ts
+ │    │    ├── guards/
+ │    │    │    ├── auth.guard.ts
+ │    │    │    └── admin.guard.ts
+ │    │    ├── services/
+ │    │    │    ├── auth.service.ts
+ │    │    │    ├── product.service.ts
+ │    │    │    ├── cart.service.ts
+ │    │    │    └── order.service.ts
+ │    │    ├── models/                          # Global interfaces & models
+ │    │    │    ├── user.model.ts
+ │    │    │    ├── product.model.ts
+ │    │    │    ├── order.model.ts
+ │    │    │    └── cart.model.ts
+ │    │    ├── core.module.ts
+ │    │    └── index.ts
+ │    │
+ │    ├── shared/                               # Shared reusable UI and logic
+ │    │    ├── components/
+ │    │    │    ├── button/
+ │    │    │    │    ├── button.component.ts
+ │    │    │    │    └── button.component.html
+ │    │    │    ├── modal/
+ │    │    │    │    ├── modal.component.ts
+ │    │    │    │    └── modal.component.html
+ │    │    │    └── loader/
+ │    │    │         ├── loader.component.ts
+ │    │    │         └── loader.component.html
+ │    │    ├── pipes/
+ │    │    │    └── truncate.pipe.ts
+ │    │    ├── directives/
+ │    │    │    └── highlight.directive.ts
+ │    │    ├── utils/
+ │    │    │    └── helpers.ts
+ │    │    └── shared.module.ts
+ │    │
+ │    ├── features/                             # Feature-based structure (User + Admin)
+ │    │    ├── auth/                            # Login/Register etc.
+ │    │    │    ├── login/
+ │    │    │    │    ├── login.component.ts
+ │    │    │    │    └── login.component.html
+ │    │    │    ├── register/
+ │    │    │    │    ├── register.component.ts
+ │    │    │    │    └── register.component.html
+ │    │    │    └── auth.module.ts
+ │    │    │
+ │    │    ├── products/                        # Product section for users/admin
+ │    │    │    ├── list/
+ │    │    │    │    ├── product-list.component.ts
+ │    │    │    │    └── product-list.component.html
+ │    │    │    ├── detail/
+ │    │    │    │    ├── product-detail.component.ts
+ │    │    │    │    └── product-detail.component.html
+ │    │    │    └── manage-products/            # Admin-only section inside products
+ │    │    │         ├── add-product/
+ │    │    │         │    ├── add-product.component.ts
+ │    │    │         │    └── add-product.component.html
+ │    │    │         ├── edit-product/
+ │    │    │         │    ├── edit-product.component.ts
+ │    │    │         │    └── edit-product.component.html
+ │    │    │         └── manage-products.component.ts
+ │    │    │
+ │    │    ├── cart/
+ │    │    │    ├── cart-page/
+ │    │    │    │    ├── cart-page.component.ts
+ │    │    │    │    └── cart-page.component.html
+ │    │    │    └── cart.module.ts
+ │    │    │
+ │    │    ├── checkout/
+ │    │    │    ├── shipping/
+ │    │    │    │    ├── shipping.component.ts
+ │    │    │    │    └── shipping.component.html
+ │    │    │    ├── payment/
+ │    │    │    │    ├── payment.component.ts
+ │    │    │    │    └── payment.component.html
+ │    │    │    └── checkout.module.ts
+ │    │    │
+ │    │    ├── user/                            # User module (also holds Admin Dashboard)
+ │    │    │    ├── profile/
+ │    │    │    │    ├── profile.component.ts
+ │    │    │    │    └── profile.component.html
+ │    │    │    ├── orders/
+ │    │    │    │    ├── order-list.component.ts
+ │    │    │    │    └── order-list.component.html
+ │    │    │    ├── admin-dashboard/            # Admin dashboard inside user module
+ │    │    │    │    ├── admin-dashboard.component.ts
+ │    │    │    │    ├── admin-dashboard.component.html
+ │    │    │    │    └── admin-dashboard.component.css
+ │    │    │    └── user.module.ts
+ │    │    │
+ │    │    └── pages/                           # Standalone pages
+ │    │         ├── home/
+ │    │         │    ├── home.component.ts
+ │    │         │    └── home.component.html
+ │    │         ├── about/
+ │    │         │    ├── about.component.ts
+ │    │         │    └── about.component.html
+ │    │         └── contact/
+ │    │              ├── contact.component.ts
+ │    │              └── contact.component.html
+ │    │
+ │    ├── layouts/                              # Global layouts
+ │    │    ├── main-layout/
+ │    │    │    ├── main-layout.component.ts
+ │    │    │    ├── main-layout.component.html
+ │    │    │    └── main-layout.component.css
+ │    │    ├── auth-layout/
+ │    │    │    ├── auth-layout.component.ts
+ │    │    │    ├── auth-layout.component.html
+ │    │    │    └── auth-layout.component.css
+ │    │    └── layout.module.ts
+ │    │
+ │    ├── app-routing.module.ts
+ │    └── app.module.ts
+ │
+ ├── assets/
+ │    ├── images/
+ │    ├── icons/
+ │    ├── i18n/
+ │    └── styles/
+ │         ├── variables.css
+ │         ├── mixins.css
+ │         └── global.css
+ │
+ ├── environments/
+ │    ├── environment.ts
+ │    └── environment.prod.ts
+ │
+ ├── index.html
+ └── main.ts
