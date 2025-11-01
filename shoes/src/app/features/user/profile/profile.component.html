@@ -1,0 +1,18 @@
+ <div class="main" *ngIf="user">
+ <div class="profile-card">
+        <div class="profile-pic-container">
+            <img src="https://thumbs.dreamstime.com/z/default-profile-picture-icon-high-resolution-high-resolution-default-profile-picture-icon-symbolizing-no-display-picture-360167031.jpg?ct=jpeg" alt="Profile Picture" class="profile-pic">
+            <button class="change-pic-btn" aria-label="Change profile picture">
+                <i class="fas fa-camera"></i>
+            </button>
+        </div>
+        <div class="profile-info">
+            <h2>{{user.fullName}}</h2>
+            <p class="email">{{user.email}}</p>
+        </div>
+        <div class="profile-actions">
+            <!-- <button class="edit-btn">Edit Profile</button> -->
+            <button class="logout-btn">Logout</button>
+        </div>
+    </div>
+    </div>

@@ -1,0 +1,204 @@
+<div class="container-main">
+  <div class="container">
+    <main class="page">
+      <section class="panel form-panel" aria-labelledby="shipping-heading">
+        <div class="panel-header">
+          <h2 id="shipping-heading">Shipping Details</h2>
+          <p class="panel-subtitle">Enter your delivery information</p>
+        </div>
+
+        <form class="shipping-form" [formGroup]="shippingForm">
+          <div class="row-2">
+            <label class="field">
+              <span class="label-text">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M8 8C9.65685 8 11 6.65685 11 5C11 3.34315 9.65685 2 8 2C6.34315 2 5 3.34315 5 5C5 6.65685 6.34315 8 8 8Z" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M3 14C3 11.7909 5.23858 10 8 10C10.7614 10 13 11.7909 13 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                Full name
+              </span>
+              <input type="text" name="fullName" placeholder="John Doe" formControlName="name" />
+              <div class="error-message" *ngIf="shippingForm.get('name')?.invalid && shippingForm.get('name')?.touched">
+                <small>*Full name is required</small>
+              </div>
+            </label>
+
+            <label class="field">
+              <span class="label-text">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M2 5L8 9L14 5M2 5V11C2 11.5523 2.44772 12 3 12H13C13.5523 12 14 11.5523 14 11V5M2 5L7.29289 2.70711C7.68342 2.31658 8.31658 2.31658 8.70711 2.70711L14 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Email
+              </span>
+              <input type="email" name="email" placeholder="you@example.com" formControlName="email"/>
+              <div class="error-message" *ngIf="shippingForm.get('email')?.invalid && shippingForm.get('email')?.touched">
+                <small>*Email is required</small>
+              </div>
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="label-text">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M8 5V8L10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              Address
+            </span>
+            <input type="text" name="address" placeholder="123 Main St, Apt 4B" formControlName="address" />
+            <div class="error-message" *ngIf="shippingForm.get('address')?.invalid && shippingForm.get('address')?.touched">
+              <small>*Address is required</small>
+            </div>
+          </label>
+
+          <div class="row-3">
+            <label class="field">
+              <span class="label-text">City</span>
+              <input type="text" name="city" placeholder="City" formControlName="city" />
+              <div class="error-message" *ngIf="shippingForm.get('city')?.invalid && shippingForm.get('city')?.touched">
+                <small>*City is required</small>
+              </div>
+            </label>
+
+            <label class="field">
+              <span class="label-text">State / Region</span>
+              <input type="text" name="state" placeholder="State / Region" formControlName="state"/>
+              <div class="error-message" *ngIf="shippingForm.get('state')?.invalid && shippingForm.get('state')?.touched">
+                <small>*State is required</small>
+              </div>
+            </label>
+
+            <label class="field">
+              <span class="label-text">ZIP / Postal</span>
+              <input type="text" name="zip" placeholder="10001" formControlName="pin"/>
+              <div class="error-message" *ngIf="shippingForm.get('pin')?.invalid && shippingForm.get('pin')?.touched">
+                <small>*Postal Code is required</small>
+              </div>
+            </label> 
+          </div>
+
+          <div class="row-2">
+            <label class="field">
+              <span class="label-text">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M10 2H6C5.44772 2 5 2.44772 5 3V13C5 13.5523 5.44772 14 6 14H10C10.5523 14 11 13.5523 11 13V3C11 2.44772 10.5523 2 10 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8 11.5H8.005" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Phone
+              </span>
+              <input type="tel" name="phone" placeholder="+1 555 555 5555" formControlName="phone" />
+              <div class="error-message" *ngIf="shippingForm.get('phone')?.invalid && shippingForm.get('phone')?.touched">
+                <small>*Phone number is required</small>
+              </div>
+            </label>
+
+            <label class="field">
+              <span class="label-text">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <rect x="2" y="4" width="12" height="9" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M2 7H14" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M4 10H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                Select Payment Method
+              </span>
+              <select formControlName="paymentMethod">
+                <option value="" disabled selected>Select a payment option</option>
+                <option value="upi">UPI</option>
+                <option value="netbanking">Net Banking</option>
+                <option value="credit">Credit Card</option>
+                <option value="debit">Debit Card</option>
+                <option value="cod">Cash on Delivery</option>
+              </select>
+              <div class="error-message" *ngIf="shippingForm.get('paymentMethod')?.invalid && shippingForm.get('paymentMethod')?.touched">
+                <small>*Please select a payment method</small>
+              </div>
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="label-text">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 5H13M3 8H13M3 11H9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              Notes (optional)
+            </span>
+            <textarea name="notes" rows="3" placeholder="Delivery instructions..."></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="btn primary" [disabled]="shippingForm.invalid" (click)="goToPayment()">
+              <span>Proceed to Payment</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </form>                                                               
+      </section>
+
+      <aside class="panel summary-panel" aria-labelledby="summary-heading">
+        <div class="summary-content">
+          <div class="summary-header">
+            <h3 id="summary-heading">Order Summary</h3>
+            <div class="items-count">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M3 3H4.5L6.5 13H14.5L16.5 5H5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="7" cy="16" r="1" fill="currentColor"/>
+                <circle cx="14" cy="16" r="1" fill="currentColor"/>
+              </svg>
+              <span>Items</span>
+            </div>
+          </div>
+
+          <div class="items-list">
+            <div class="item" *ngFor="let c of cartItem">
+              <div class="item-image-wrapper">
+                <img [src]="c.image" alt="Product image" />
+              </div>
+              
+              <div class="item-details">
+                <div class="item-info">
+                  <div class="name">{{c.name}}</div>
+                  <div class="variant">Size 9 • Black</div>
+                </div>
+                
+                <div class="item-pricing">
+                  <div class="qty-badge">×2</div>
+                  <div class="price">{{c.price}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="totals">
+            <div class="row">
+              <span>Subtotal</span>
+              <span>${{subtotal}}</span>
+            </div>
+            <div class="row">
+              <span>Tax</span>
+              <span>${{tax.toFixed(0)}}</span>
+            </div>
+            <div class="row">
+              <span>Shipping</span>
+              <span class="free-badge">FREE</span>
+            </div>
+            <div class="divider"></div>
+            <div class="row total">
+              <strong>Total</strong>
+              <strong class="total-amount">${{total | number:'1.0-0' }}</strong>
+            </div>
+          </div>
+
+          <div class="summary-note">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M8 5V8L10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <small>Shipping estimates may change at checkout.</small>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+ <app-navbar></app-navbar>
+
+ <section class="men-hero">
+    <div class="hero-content">
+      <!-- <h1>Top Collections</h1>
+      <p>Explore the latest styles designed for performance and comfort.</p> -->
+      <!-- <a href="#products" class="shop-btn">Shop Now</a> -->
+    </div>
+  </section>
+
+  <!-- Product Grid -->
+  <section class="product-section" id="products">
+    <div class="product-grid">
+
+      <!-- Product 1 -->
+      <div class="product-card" *ngFor="let p of filteredProducts | paginate: { itemsPerPage: 8, currentPage: page }" (click)="gotoDetail(p.id!)">
+        <img [src]="p.image">
+        <h3>{{p.name}}</h3>
+        <p>${{p.price}}</p>
+       <button (click)="addToCart(p); $event.stopPropagation()">Add to Cart</button>
+
+      </div>
+
+
+
+    </div>
+  </section>
+  <div class="pagination-wrapper">
+  <pagination-controls 
+        (pageChange)="page = $event">
+  </pagination-controls>
+</div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ShoeStore. All rights reserved.</p>
+  </footer>
+<app-detail></app-detail>

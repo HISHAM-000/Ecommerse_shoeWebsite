@@ -1,0 +1,49 @@
+
+<div class="main black-theme">
+  <div class="edit-product-container">
+    <div class="edit-product">
+      <h2>Edit Product</h2>
+
+      <form (ngSubmit)="saveChanges()">
+        <!-- Product Name -->
+        <label for="name">Name</label>
+       <input [(ngModel)]="product.name" name="name" required />
+
+        <!-- Category -->
+        <label for="category">Category</label>
+        <select [(ngModel)]="product.category" name="category" required>
+      <option>men</option>
+      <option>women</option>
+      <option>kids</option>
+      <option>sports</option>
+    </select>
+
+        <!-- Brand -->
+        <label for="brand">Brand</label>
+        <input [(ngModel)]="product.name" name="name" required />
+        <!-- Price -->
+        <label>Price</label>
+    <input type="number" [(ngModel)]="product.price" name="price" required />
+
+    <label>Stock</label>
+    <input type="number" [(ngModel)]="product.stock" name="stock" required />
+
+    <label>Image URL</label>
+    <input [(ngModel)]="product.image" name="image" />
+    <img *ngIf="product.image" [src]="product.image" alt="preview" class="preview" />
+
+        <!-- Description -->
+        <label>Description</label>
+    <textarea [(ngModel)]="product.description" name="description"></textarea>
+
+        <!-- Actions -->
+       <div class="actions">
+      <button type="submit" class="save-btn">Save</button>
+      <button type="button" (click)="router.navigate(['/products/manage'])" class="cancel-btn">
+        Cancel
+      </button>
+    </div>
+      </form>
+    </div>
+  </div>
+</div>

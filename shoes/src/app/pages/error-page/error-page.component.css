@@ -1,0 +1,33 @@
+.not-found-container {
+  text-align: center;
+  padding: 5rem 2rem;
+  color: #333;
+}
+
+.not-found-container h1 {
+  font-size: 6rem;
+  font-weight: 700;
+  color: #ff4b2b;
+  margin-bottom: 1rem;
+}
+
+.not-found-container p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.home-btn {
+  text-decoration: none;
+  background-color: #ff4b2b;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.home-btn:hover {
+  background-color: #e03d1b;
+  transform: scale(1.05);
+}

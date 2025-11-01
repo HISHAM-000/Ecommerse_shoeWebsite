@@ -1,0 +1,107 @@
+
+       <div class="main black-theme">
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Panel</h3>
+            </div>
+            <ul class="sidebar-links">
+                <li><a href="#" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a routerLink="/user/manage-users"><i class="fas fa-users"></i> Users</a></li>
+                <li><a routerLink="/products/manage"><i class="fas fa-box"></i> Products</a></li>
+                <!-- <li><a href="#"><i class="fas fa-chart-line"></i> Analytics</a></li> -->
+            </ul>
+            <div class="sidebar-footer">
+                <a (click)="logOut()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+          
+            <header class="main-header">
+  <h2>Welcome, Admin!</h2>
+  <div class="user-menu" (click)="toggleProfileModal()">
+    <i class="fas fa-user-circle"></i>
+    <span>Admin</span>
+  </div>
+</header>
+
+<!-- Profile Modal -->
+<div class="profile-modal" *ngIf="isProfileModalOpen" (click)="closeProfileModal()">
+  <div class="profile-modal-content" (click)="$event.stopPropagation()">
+    <div class="profile-header">
+      <i class="fas fa-user-circle profile-icon"></i>
+      <h3>Admin Profile</h3>
+    </div>
+    <div class="profile-details">
+      <p><strong>Name:</strong> admin</p>
+      <p><strong>Email:</strong> admin@gmail.com</p>
+      <p><strong>Role:</strong>  Admin</p>
+    </div>
+    <div class="profile-actions">
+      <button class="btn logout-btn" (click)="logOut()">Logout</button>
+      <button class="btn close-btn" (click)="closeProfileModal()">Close</button>
+    </div>
+  </div>
+</div>
+
+
+            <section class="metrics">
+                <div class="metric-card">
+                    <div class="card-icon"><i class="fas fa-eye"></i></div>
+                    <div class="card-info">
+                        <h4>Total Visits</h4>
+                        <p>1,234</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="card-icon"><i class="fas fa-shopping-cart"></i></div>
+                    <div class="card-info">
+                        <h4>New Orders</h4>
+                        <p>456</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="card-icon"><i class="fas fa-dollar-sign"></i></div>
+                    <div class="card-info">
+                        <h4>Revenue</h4>
+                        <p>$12,345</p>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="card-icon"><i class="fas fa-user-plus"></i></div>
+                    <div class="card-info">
+                        <h4>New Users</h4>
+                        <p>78</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="recent-activity">
+                <h3>Recent Orders</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Product</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                   <tbody>
+  <tr *ngFor="let user of users; let i = index">
+    <td>{{ i + 1 }}</td>
+    <td>{{ user.fullName }}</td>
+    <td>{{ user.email }}</td>
+    <td><span class="status pending">Pending</span></td>
+  </tr>
+
+  <tr *ngIf="users.length === 0">
+    <td colspan="4" style="text-align:center;">No users found</td>
+  </tr>
+</tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</div>

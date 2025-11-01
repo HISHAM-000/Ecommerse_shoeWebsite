@@ -1,0 +1,98 @@
+<!-- <div class="manage-products">
+
+  <div class="top-bar">
+    <h2>Manage Products</h2>
+
+    <div class="actions">
+  
+    <select [(ngModel)]="selectedCategory" (change)="applyFilter()" class="category-filter">
+  <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+</select>
+
+
+      <button routerLink="/products/manage/add" class="add-btn">+ Add Product</button>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of filteredProducts">
+          <td>{{ p.id }}</td>
+          <td><img [src]="p.image" alt="{{ p.name }}" class="thumb" /></td>
+          <td>{{ p.name }}</td>
+          <td>{{ p.category }}</td>
+          <td>${{ p.price }}</td>
+          <td>
+            <button (click)="editProduct(p.id!)" class="edit-btn">Edit</button>
+            <button (click)="deleteProduct(p.id!)" class="delete-btn">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+ 
+    <p *ngIf="filteredProducts.length === 0" class="no-products">
+      No products found for this category.
+    </p>
+  </div>
+</div> -->
+  <div class="main black-theme">
+  <main class="main-content">
+    <div class="manage-products">
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <h2>Manage Products</h2>
+        <div class="actions">
+          <select class="category-filter" [(ngModel)]="selectedCategory" (change)="applyFilter()">
+           <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+          </select>
+          <button class="add-btn" routerLink="/products/manage/add">+ Add Product</button>
+        </div>
+      </div>
+
+      <!-- Product Table -->
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr  *ngFor="let p of filteredProducts">
+              <td>{{ p.id }}</td>
+          <td><img [src]="p.image" alt="{{ p.name }}" class="thumb" /></td>
+          <td>{{ p.name }}</td>
+          <td>{{ p.category }}</td>
+          <td>${{ p.price }}</td>
+          <td>
+            <button (click)="editProduct(p.id!)" class="edit-btn">Edit</button>
+            <button (click)="deleteProduct(p.id!)" class="delete-btn">Delete</button>
+          </td>
+        </tr>
+           
+          </tbody>
+        </table>
+         <p *ngIf="filteredProducts.length === 0" class="no-products">
+      No products found for this category.
+    </p>
+      </div>
+    </div>
+  </main>
+</div>

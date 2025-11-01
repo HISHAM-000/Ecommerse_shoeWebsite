@@ -1,0 +1,42 @@
+<section class="product-details" *ngIf="product">
+  <div class="product-container">
+    <!-- Product Image -->
+    <div class="product-images">
+      <img [src]="product.image" alt="{{product.name}}" class="main-image">
+    </div>
+
+    <!-- Product Info -->
+    <div class="product-info">
+      <h2 class="product-name">{{ product.name }}</h2>
+      <p class="price">₹{{ product.price }}</p>
+      <p class="description">{{ product.description }}</p>
+
+      <!-- <div class="product-options">
+        <div class="option-group">
+          <label>Size:</label>
+          <select [(ngModel)]="selectedSize">
+            <option *ngFor="let s of sizes" [value]="s">{{ s }}</option>
+          </select>
+        </div>
+
+        <div class="option-group">
+          <label>Color:</label>
+          <select [(ngModel)]="selectedColor">
+            <option *ngFor="let c of colors" [value]="c">{{ c }}</option>
+          </select>
+        </div>
+
+        <div class="option-group quantity">
+          <label>Quantity:</label>
+          <div class="quantity-controls">
+            <button (click)="decreaseQuantity()">−</button>
+            <span>{{ quantity }}</span>
+            <button (click)="increaseQuantity()">+</button>
+          </div>
+        </div>
+      </div> -->
+
+      <button class="add-to-cart" (click)="addToCart()">Add to Cart</button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+
+
+  <!-- ===== SIGN UP CONTAINER ===== -->
+   <div class="page-container">
+  <div class="signup-container">
+    <div class="signup-box">
+      <h1>Sign UP</h1>
+
+      <form [formGroup]="signupForm" class="signup-form" (ngSubmit)="register()">
+        <div class="input-group">
+          <label for="name">Full Name</label>
+          <input type="text"  placeholder="Enter your full name"  formControlName="name">
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email"  placeholder="Enter your email" formControlName="email">
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password"  placeholder="Create a password"  formControlName="password">
+        </div>
+
+        <div class="input-group">
+          <label for="confirm">Confirm Password</label>
+          <input type="password"  placeholder="Re-enter your password" formControlName="confirmPassword">
+        </div>
+
+        <button type="submit" class="signup-btn">Sign Up</button>
+
+        <div class="extra-links">
+          <p>Already have an account? <a href="login.html">Login</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

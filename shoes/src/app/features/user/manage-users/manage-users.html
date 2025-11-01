@@ -1,0 +1,114 @@
+<div class="manage-users-container black-theme">
+  <div class="header-section">
+    <h2>Manage Users</h2>
+    <input
+      type="text"
+      placeholder="🔍 Search users..."
+      [(ngModel)]="searchTerm"
+      class="search-bar"
+    />
+  </div>
+
+  <div class="table-wrapper">
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of filteredUsers; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ user.fullName }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <span class="role-badge" [ngClass]="user.role">{{
+              user.role | titlecase
+            }}</span>
+          </td>
+          <td>
+            <button class="view-btn" (click)="viewUser(user)">👁 View</button>
+            <button class="edit-btn" (click)="editUser(user)">✏ Edit</button>
+            <button class="delete-btn" (click)="deleteUser(user.email)">
+              🗑 Delete
+            </button>
+          </td>
+        </tr>
+
+        <tr *ngIf="filteredUsers.length === 0">
+          <td colspan="5" class="no-users">No users found</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ✏ Edit User Modal -->
+  <div class="modal" *ngIf="editingUser">
+    <div class="modal-content">
+      <h3>Edit User</h3>
+
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" [(ngModel)]="editingUser.fullName" />
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" [(ngModel)]="editingUser.email" />
+      </div>
+
+      <div class="form-group">
+        <label>Role</label>
+        <select [(ngModel)]="editingUser.role">
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+
+      <div class="modal-buttons">
+        <button (click)="saveUser()" class="save-btn">💾 Save</button>
+        <button (click)="cancelEdit()" class="cancel-btn">✖ Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 👁 View User Modal -->
+  <div class="modal" *ngIf="selectedUser">
+    <div class="modal-content">
+      <h3>User Details</h3>
+      <p><strong>Full Name:</strong> {{ selectedUser.fullName }}</p>
+      <p><strong>Email:</strong> {{ selectedUser.email }}</p>
+      <p><strong>Role:</strong> {{ selectedUser.role | titlecase }}</p>
+
+      <h4>🛒 Order Details</h4>
+      <table class="order-table">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of selectedUser.orders">
+            <td>{{ order.orderId }}</td>
+            <td>{{ order.productName }}</td>
+            <td>{{ order.quantity }}</td>
+            <td>₹{{ order.price }}</td>
+            <td>₹{{ order.quantity * order.price }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="modal-buttons">
+        <button (click)="closeView()" class="cancel-btn">✖ Close</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,169 @@
+/* --- Black Theme Variables --- */
+.black-theme {
+  --bt-background: #000000;
+  --bt-surface: #1c1c1e;
+  --bt-sidebar: #1c1c1e;
+  --bt-accent: #4ecdc4;
+  --bt-primary-text: #ffffff;
+  --bt-secondary-text: #a9a9a9;
+  --bt-shadow-color: rgba(255, 255, 255, 0.1);
+
+  background-color: var(--bt-background);
+  color: var(--bt-primary-text);
+}
+
+/* --- Page Layout --- */
+.main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: var(--bt-background);
+}
+
+.main-content {
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px;
+  background-color: var(--bt-background);
+}
+
+/* --- Manage Products --- */
+.manage-products {
+  color: var(--bt-primary-text);
+}
+
+/* --- Top Bar --- */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.top-bar h2 {
+  font-size: 1.8em;
+  margin: 0;
+  color: var(--bt-primary-text);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* --- Category Filter --- */
+.category-filter {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--bt-surface);
+  background-color: var(--bt-surface);
+  color: var(--bt-primary-text);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* --- Add Button --- */
+.add-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--bt-accent);
+  color: var(--bt-background);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-btn:hover {
+  background-color: #3aa89f;
+}
+
+/* --- Table --- */
+.table-container {
+  background-color: var(--bt-surface);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 15px var(--bt-shadow-color);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead tr {
+  border-bottom: 1px solid #38383a;
+}
+
+th {
+  text-align: left;
+  padding: 15px 20px;
+  font-weight: 600;
+  color: var(--bt-primary-text);
+}
+
+tbody tr {
+  border-bottom: 1px solid #38383a;
+  transition: background-color 0.3s;
+}
+
+tbody tr:last-of-type {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background-color: #2a2a2a;
+}
+
+td {
+  padding: 15px 20px;
+  vertical-align: middle;
+  color: var(--bt-primary-text);
+}
+
+/* --- Product Image --- */
+.thumb {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* --- Buttons --- */
+.edit-btn,
+.delete-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.edit-btn {
+  background-color: #ffc107;
+  color: #333;
+  margin-right: 10px;
+}
+
+.edit-btn:hover {
+  background-color: #e0a800;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* --- Empty State --- */
+.no-products {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2em;
+  color: var(--bt-secondary-text);
+}
